@@ -1,0 +1,697 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+</style>
+<title>Typesafe Query</title>
+
+</head>
+<body>
+<h1>Typesafe Query</h1>
+
+<p>Typesafe QueryはSQLを安全に記述するためのとても便利な一連のヘルパを提供します。</p>
+
+<h2>Typesafe Queryとは？</h2>
+
+<h3>特徴</h3>
+
+<p>Typesafe Queryでは以下を重要視しています。</p>
+
+<ul>
+<li>柔軟なO/Rマッピング</li>
+<li>JDBCを(なるべく)意識させない</li>
+<li>ネイティブSQLを記述するようにJavaコードを記述できる</li>
+<li>スキーマの変更に強い</li>
+</ul>
+
+
+<h3>Java8対応</h3>
+
+<p>Typesafe QueryではJava8から導入されたOptional、DateTime APIをO/Rマッピングに使用できます。</p>
+
+<h2>インストール</h2>
+
+<p>Maven</p>
+
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;com.github.typesafe_query&lt;/groupId&gt;
+  &lt;artifactId&gt;typesafe-query-core&lt;/artifactId&gt;
+  &lt;version&gt;0.0.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h2>使い方</h2>
+
+<h3>データベースコネクションの登録</h3>
+
+<p>Typesafe Queryの各クラスは<code>ConnectionHolder</code>クラスを通じてデータベースコネクションを取得します。<br/>
+<code>ConnectionHolder</code>クラスはスレッド毎にコネクションを保持する仕組みですので、スレッド毎に同じコネクションが使用されます。<br/>
+登録は以下のようにします。</p>
+
+<pre><code>ConnectionHolder.getInstance().set(connection);
+</code></pre>
+
+<p>この処理は通常共通化しておくべきです。</p>
+
+<h3>テーブルエンティティの作成</h3>
+
+<p>Typesafe Queryではアノテーションを使用してO/Rマッピング用エンティティクラスを作成することで、タイプセーフなクエリを実現するためのエンティティメタデータクラスを自動的に作成します。</p>
+
+<h4>プロパティを定義する</h4>
+
+<p>テーブルのレコードをマッピングするためのクラスを作成します。これは通常のJavaBeanでかまいませんが、２つだけ注意があります。</p>
+
+<ul>
+<li><strong>NULL許可項目はOptionalで定義</strong></li>
+<li><strong>日付系は<code>LocalDate</code> <code>LocalTime</code> <code>LocalDateTime</code>で定義</strong></li>
+</ul>
+
+
+<p>これらに注意してプロパティを定義していってください。</p>
+
+<h4>アノテーションを付与する</h4>
+
+<h5>@Model</h5>
+
+<p>エンティティクラスに注釈します。<br/>
+このアノテーションがあることでエンティティメタデータクラスが自動的に作成されます。</p>
+
+<pre><code>@Model
+public class Customer{
+</code></pre>
+
+<p>テーブル名はエンティティクラス名と認識されます。キャメルケースで命名されたクラスはスネークケースに変換した名前をテーブル名とします。</p>
+
+<pre><code>Customer -&gt; customer
+UserInfo -&gt; user_info
+</code></pre>
+
+<h5>@Table</h5>
+
+<p>クラス名とテーブル名が異なる場合に使用します。<br/>
+例えばすべてのテーブルに特定の接頭辞があり、Javaクラスでは接頭辞を除いた命名にしたい等の場合にこのアノテーションを付与します。</p>
+
+<pre><code>@Model
+@Table(name="M_CUSTOMER")
+public class Customer{
+</code></pre>
+
+<h5>@Id</h5>
+
+<p>プライマリーキー項目に注釈します。</p>
+
+<pre><code>@Id
+private Integer id;
+</code></pre>
+
+<p>これは単一のプライマリーキーの指定に使用します。複合プライマリーキーの場合は後述する<code>@EmbeddedId</code>を使用して下さい。</p>
+
+<p><strong>注意</strong><br/>
+エンティティクラスには<code>@Id</code>または<code>@EmbeddedId</code>のどちらかを必ず指定する必要があります。</p>
+
+<h5>@EmbeddedId</h5>
+
+<p>複合プライマリーキーの指定に使用します。</p>
+
+<pre><code>public class CartPK{
+  @Column("CUST_ID")
+  private Integer customerId;
+  private Integer no;
+  //getters and setters
+}
+
+@Model
+public class Cart{
+  @EmbeddedId
+  private CartPK cartPK;
+}
+</code></pre>
+
+<h5>@Column</h5>
+
+<p>プロパティ名とカラム名が異なる場合に使用します。<code>@Table</code>と同様、別名をつけることができます。</p>
+
+<pre><code>@Column(name="USR_NM")
+private String userName;
+</code></pre>
+
+<h5>@Transient</h5>
+
+<p>O/Rマッピングの対象にしたくないプロパティに注釈します。</p>
+
+<pre><code>@Transient
+private String javaField;
+</code></pre>
+
+<p>また、Typesafe Queryでは以下で修飾されたフィールドは無視されます。</p>
+
+<ul>
+<li>static</li>
+<li>transient</li>
+<li>native</li>
+<li>violate</li>
+</ul>
+
+
+<h3>エンティティメタデータクラス</h3>
+
+<p>Typesafe Queryではエンティティクラスのコンパイル時にアノテーションプロセッサにより自動的にエンティティメタデータクラスを作成します。<br/>
+メタデータクラスはエンティティクラス名にアンダースコア<code>_</code>をつけたものがクラス名になります。</p>
+
+<pre><code>@Model
+public class Customer {
+  …
+}
+</code></pre>
+
+<p>例えば、上記のようなエンティティクラスの場合、次のようなメタデータクラスが自動生成されます。</p>
+
+<pre><code>public final class Customer_ {
+  …
+}
+</code></pre>
+
+<p>メタデータクラス名は<code>Customer_</code>になります。<br/>
+メタデータクラスはタイプセーフなクエリを実現するための重要なクラスです。このメタデータクラスを駆使してタイプセーフなクエリを作成していきましょう。</p>
+
+<h3>データの基本操作</h3>
+
+<p>データの基本操作は<code>ModelHandler</code>オブジェクトを介して行います。<br/>
+データベース操作の<code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code>などのデータ更新操作はすべて<code>ModelHandler</code>クラスを介して行われます。<br/>
+<code>ModelHandler</code>オブジェクトはエンティティメタデータクラスのメソッド<code>model()</code>として定義されています。</p>
+
+<p>例えば次の例を見てください。</p>
+
+<pre><code>@Model
+public class Customer{
+  @Id
+  private Long id;
+  private String name;
+  …
+}
+
+Customer c = new Customer();
+c.setName("HOGE");
+Customer_.model().create(c); //insert
+
+c.setName("PIYO");
+Customer_.model().save(c); //update
+
+Customer_.model().delete(c); //delete
+</code></pre>
+
+<p><code>ModelHandler</code>ヘルパクラスを使用することでSQLを意識せず直感的にコーディングを行うことができます。</p>
+
+<h3>データの検索</h3>
+
+<p>Typesafe Queryではエンティティメタデータクラスと<code>Finder</code>オブジェクトを使用してデータを検索します。<br/>
+<code>Finder</code>オブジェクトはエンティティメタデータクラスのメソッド<code>find()</code>として定義されています。<code>Finder</code>の代表的な検索方法は以下のとおりです。</p>
+
+<h4>IDで検索</h4>
+
+<p>データを検索する最も簡単な方法です。プライマリーキーで検索するため高速です。</p>
+
+<pre><code>Optional&lt;Customer&gt; c = Customer_.find().byId(10L);
+</code></pre>
+
+<p>複合Keyの場合はキークラスを指定して検索できます。</p>
+
+<pre><code>ChildKey ck = new ChildKey();
+ck.setParentId(10L);
+ck.setChildId(1L);
+
+Optional&lt;Child&gt; c = Child_.find().byId(ck);
+</code></pre>
+
+<h4>全件検索</h4>
+
+<pre><code>List&lt;Customer&gt; customers = Customer_.find().list();
+</code></pre>
+
+<p>これは<strong>すべての</strong>データを取得します。データ件数が明らかに多い場合、この検索を行うとパフォーマンスの低下を招く恐れがあるため、通常は次のように件数を指定します。</p>
+
+<pre><code>//取得件数を指定
+List&lt;Customer&gt; customers = Customer_.find().list(10);
+
+//オフセットと取得件数を指定
+List&lt;Customer&gt; customers = Customer_.find().list(50,10);
+</code></pre>
+
+<h4>シンプルな条件を指定して検索</h4>
+
+<p>1つのテーブルに対していくつかの条件を指定して検索を行うことは頻繁にあるでしょう。Typesafe Queryではこれらの検索でも文字ベースのSQLをわざわざ記述することはありません。</p>
+
+<pre><code>// where customer.age &lt; 30
+List&lt;Customer&gt; customers = Customer_.find().listWhere(
+   Customer_.AGE.lt(30)
+);
+</code></pre>
+
+<p>エンティティメタデータのプロパティを使用して条件を指定します。複数の条件を指定することもできます。</p>
+
+<pre><code>import static com.github.typesafe_query.Q.*;
+
+...
+
+List&lt;Customer&gt; customers = Customer_.find().listWhere(
+   and(
+     Customer_.AGE.lt(30),
+     Customer_.COUNTRY.eq("Japan")
+   )
+);
+</code></pre>
+
+<p>この検索方法は<strong>特に重要</strong>です。<br/>
+一般的なWebアプリケーションの開発ではこの検索方法とIDでの検索がほとんどでしょう。複雑なクエリを設計する前にまずはシンプルな条件で検索できないか検討してください。</p>
+
+<h4>動的検索条件</h4>
+
+<p>UIで検索条件を指定させて検索処理を行う機能は、一般的なアプリケーションなら頻繁にあるでしょう。しかしながら検索条件が多くなるとプログラマはチェック処理の<code>if</code>地獄に陥りがちです。<br/>
+Typesafe Queryのタイプセーフな条件式では、条件の値が<code>null</code>のものは無視して条件に追加しません。</p>
+
+<pre><code>Condition c = ...
+List&lt;Customer&gt; customers = Customer_.find().listWhere(
+   and(
+     Customer_.AGE.lt(c.getAge()), // null
+     Customer_.COUNTRY.eq(c.getCountry()) // "Japan"
+   )
+);
+
+//where customer.country = 'Japan'
+</code></pre>
+
+<p>上記のように、条件式の値が<code>null</code>の場合は無視されます。つまりプログラマは必須の条件のみチェックすればよいことになり、シンプルでわかりやすいコードを記述することができます。<br/>
+もし明示的に<code>NULL</code>の条件を追加したい場合は<code>Customer_.AGE.isNull()</code>としてください。</p>
+
+<h4>Qクラス</h4>
+
+<p><code>Q</code>クラスをstatic importすることでand条件やexists式、SQL関数などを使うことができます。また、後述するクエリの作成のためのヘルパメソッドを利用できます。<br/>
+ソースコードの可読性向上のために、エンティティを検索するクラスでは以下のように常にstatic importしておくことをおすすめします。</p>
+
+<pre><code>import static com.github.typesafe_query.Q.*;
+</code></pre>
+
+<p><code>Q</code>クラスの詳細はJavadocを参照してください。</p>
+
+<h4>タイプセーフクエリを組み立てて検索</h4>
+
+<p>取得順序を指定したり1つのテーブルでは完結しないような複雑なクエリを組み立てることができます。<br/>
+ただし、複雑なクエリは間違いを犯す可能性が高くバグ発生の元になります。複雑なクエリを組み立てる前にIDで取得できないか、シンプルな条件指定検索で仕様を満たすことができないかをもう一度考えてみましょう。</p>
+
+<pre><code>List&lt;Parent&gt; parents = select()
+    .distinct()
+    .from(Parent_.TABLE)
+    .outerJoin(Parent_.CHILD_MODELS)
+    .where(
+        and(
+            Child_.NAME.in("JACKSON","HOGEO"),
+            or(
+                Parent_.AGE.lt(18),
+                Parent_.AGE.gt(30),
+            ),
+            exists(subQuery()
+                .from(Parent_.TABLE,"p2")
+                .where(Parent_.ID.eq($("p2",Parent_.ID)))
+            )
+        )
+    ).orderBy(Parent_.NAME.asc())
+    .forOnce()
+    .getResultList(Parent.class);
+</code></pre>
+
+<p>Typesafe Queryではエンティティメタデータ、クエリヘルパーを使用して上記のようなSQLライクなタイプセーフクエリを組み立てることができます。<br/>
+タイプセーフであるということは、変更をコンパイルエラーという形で知ることができるということですから、SQLを文字列で記述するより安全です。</p>
+
+<p><em>Hint</em>
+以下にタイプセーフクエリを選択するべきケースの例を示します。</p>
+
+<ul>
+<li>order by句で並べ替えをしたい</li>
+<li>重複を排除したい</li>
+<li>複数のテーブルの内容をフラットな結果で取得したい</li>
+<li>集計関数を使用して集計をしたい</li>
+</ul>
+
+
+<p>詳しくはメタデータ、<code>Finder</code>のJavadocを参照してください。</p>
+
+<h5>パラメータを付与する</h5>
+
+<p>タイプセーフクエリにはパラメータを埋め込むことができます。ループ中で複数回呼び出すなど、クエリを使いまわしたい場合などに有効です。</p>
+
+<p>クエリの条件式にパラメータを埋め込みます。</p>
+
+<pre><code>Customer_.NAME.like(param());
+</code></pre>
+
+<p>動的に値をセットするには、作成したクエリにパラメータの値をセットします。</p>
+
+<pre><code>query.addParam("%HOGE%");
+</code></pre>
+
+<p><strong>注意</strong><br/>
+パラメータは最終的に組み立てられたSQLの登場順に追加されます。複雑なSQLでは意図しない順番でパラメータが登録される恐れがありますのでログに出力されたSQLを確認するなどして十分にテストを実施してください。</p>
+
+<h4>1行のみ取得する</h4>
+
+<p>これまで説明してきた<code>getResultList</code>のメソッドには同様の動作をする<code>getResult</code>というメソッドも存在します。これは<strong>1行のみ取得できることが保証されている場合</strong>に使用することができます。</p>
+
+<pre><code>Optional&lt;Customer&gt; c = 
+  select()
+  .from(Customer_.TABLE)
+  .forOnce()
+  .getResult(Customer.class);
+</code></pre>
+
+<p>もしデータが存在しない場合は<code>Optional.empty()</code>を返します。</p>
+
+<p>また、必ず行が取得できることがわかっている場合は<code>getRequiredResult</code>メソッドを使用することで<code>Optional</code>ではなく直接エンティティクラスを取得することができます。<strong>行が取得できなかった場合には例外がスローされます</strong>。</p>
+
+<pre><code>Customer c = 
+  select()
+  .from(Customer_.TABLE)
+  .forOnce()
+  .getRequiredResult(Customer.class);
+</code></pre>
+
+<h3>一括更新、一括削除</h3>
+
+<p><code>Bulk</code>クラスを使用して一括更新、一括削除をすることができます。<br/>
+<code>Bulk</code>オブジェクトはエンティティメタデータクラスのメソッド<code>bulk()</code>として定義されています。</p>
+
+<h4>一括更新</h4>
+
+<pre><code>int count = ApUser_.bulk().updateWhere(
+  set(
+    ApUser_.LOCK_FLG.eq("0")
+  ),
+  ApUser_.UNIT_ID.eq("U1")
+);
+//update apuser set lock_flg ='0' where unit_id = 'U1'
+</code></pre>
+
+<h4>一括削除</h4>
+
+<pre><code>int count = ApUser_.bulk().deleteWhere(ApUser_.UNIT_ID.eq("U1"));
+//delete from apuser where unit_id = 'U1'
+</code></pre>
+
+<h3>ファイルに記述されたSQLを実行する</h3>
+
+<p>これは上記のどの検索方法でも実現できない場合の<strong>最終手段</strong>です。この方法に行き着いた場合はまず深呼吸をして、もう一度上記のいずれかの方法で実現できないか考えなおしましょう。<br/>
+nativeSQLはタイプセーフではないため変更に対して安全ではありません。パフォーマンス・チューニングの結果この方法にたどりついた場合を除いてこの方法は<strong>極力使用すべきではありません</strong>。</p>
+
+<pre><code>List&lt;User&gt; result = namedQuery("/S001.sql")
+  .addParam("HOGE")
+  .forOnce()
+  .getResultList(User.class);
+</code></pre>
+
+<p>クラスパスルートをあらわす<code>/</code>からファイルが存在する位置までのパスを記述することでTypesafe Queryはファイル内のSQLを実行します。１つのファイルには１つのSQLを記述してください。</p>
+</body>
+</html>
