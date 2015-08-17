@@ -3,7 +3,7 @@
   <groupId>works.typesafe-query</groupId>
   <artifactId>typesafe-query</artifactId>
   <versioning>
-    <release>3.3.9</release>
+    <release>3.3.10</release>
     <versions>
       <version>3.3.2</version>
       <version>3.3.3</version>
@@ -13,7 +13,8 @@
       <version>3.3.7</version>
       <version>3.3.8</version>
       <version>3.3.9</version>
+      <version>3.3.10</version>
     </versions>
-    <lastUpdated>20150817091413</lastUpdated>
+    <lastUpdated>20150817093319</lastUpdated>
   </versioning>
 </metadata>
