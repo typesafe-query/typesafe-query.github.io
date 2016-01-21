@@ -3,7 +3,7 @@
   <groupId>com.github.typesafe-query</groupId>
   <artifactId>typesafe-query-tools</artifactId>
   <versioning>
-    <release>0.2.0</release>
+    <release>0.3.0</release>
     <versions>
       <version>0.0.1</version>
       <version>0.0.3</version>
@@ -11,7 +11,8 @@
       <version>0.0.5</version>
       <version>0.1.0</version>
       <version>0.2.0</version>
+      <version>0.3.0</version>
     </versions>
-    <lastUpdated>20160117130605</lastUpdated>
+    <lastUpdated>20160121003357</lastUpdated>
   </versioning>
 </metadata>
